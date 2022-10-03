@@ -1,0 +1,60 @@
+.CinimaGroup {
+  padding-right: 10px;
+  .CinimaGroup-Content {
+    padding: 0 5px;
+    .title {
+      font-size: var(--f-title);
+      font-weight: bold;
+      color: var(--title);
+      text-transform: capitalize;
+    }
+    .Content {
+      .tabs {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+
+        .tab {
+          .tab-switch {
+            display: none;
+          }
+          .tab-label {
+            position: relative;
+            display: block;
+            line-height: 2.75em;
+            padding: 1rem;
+
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+            }
+
+            cursor: pointer;
+            top: 0;
+            transition: all 0.25s;
+            &:hover {
+            }
+          }
+          .tab-content {
+            height: auto;
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            opacity: 0;
+          }
+        }
+      }
+
+      .tab-switch:checked + .tab-label {
+        border-bottom: 0.125rem solid #16a085;
+
+        z-index: 1;
+      }
+      .tab-switch:checked + label + .tab-content {
+        z-index: 2;
+        opacity: 1;
+      }
+    }
+  }
+}
