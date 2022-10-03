@@ -42,6 +42,25 @@
             z-index: 1;
             left: 0;
             opacity: 0;
+
+            .cinima-location {
+              line-height: 1rem;
+              text-align: center;
+              background-color: var(--title);
+              padding: 5px 2px;
+              margin: 10px 0;
+              border-radius: 7px;
+              width: 100%;
+              cursor: pointer;
+              p {
+                font-weight: bold;
+                margin: 0;
+              }
+              span {
+                opacity: 0.9;
+                font-size: 11px;
+              }
+            }
           }
         }
       }
@@ -54,6 +73,7 @@
       .tab-switch:checked + label + .tab-content {
         z-index: 2;
         opacity: 1;
+        width: 100%;
       }
     }
   }

@@ -19,7 +19,22 @@ function CinimaGroup() {
                 <img src="images/b1.jpg" alt="" />
               </label>
               <div className={styles["tab-content"]}>
-                1
+                <div className={styles["cinima-location"]}>
+                    <p>CGV - Vincom - Đà Nẵng</p>
+                    <span>Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị </span>
+                </div>
+                <div className={styles["cinima-location"]}>
+                    <p>CGV - Vincom - Quảng Trị</p>
+                    <span>Tầng 1, TTTM Vincom Center B - Hùng Vương </span>
+                </div>
+                <div className={styles["cinima-location"]}>
+                    <p>CGV - Vincom - HCM</p>
+                    <span>Tầng 1, TTTM Vincom Center B - Nguyễn Hữu Thọ </span>
+                </div>
+                <div className={styles["cinima-location"]}>
+                    <p>CGV - Vincom - Hà Nội</p>
+                    <span>Tầng 1, TTTM Vincom Center B - Nguyễn Xiển </span>
+                </div>
               </div>
             </div>
             <div className={styles["tab"]}>
@@ -27,7 +42,7 @@ function CinimaGroup() {
                 type="radio"
                 name="css-tabs"
                 id="tab-2"
-                defaultChecked
+                
                 className={styles["tab-switch"]}
               />
               <label htmlFor="tab-2" className={styles["tab-label"]}>
@@ -40,7 +55,7 @@ function CinimaGroup() {
                 type="radio"
                 name="css-tabs"
                 id="tab-3"
-                defaultChecked
+               
                 className={styles["tab-switch"]}
               />
               <label htmlFor="tab-3" className={styles["tab-label"]}>
@@ -53,7 +68,7 @@ function CinimaGroup() {
                 type="radio"
                 name="css-tabs"
                 id="tab-4"
-                defaultChecked
+               
                 className={styles["tab-switch"]}
               />
               <label htmlFor="tab-4" className={styles["tab-label"]}>
