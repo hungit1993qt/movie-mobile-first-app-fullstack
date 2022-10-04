@@ -8,6 +8,10 @@ function HomeTemplate() {
     <div>
       <HeaderHome />
       <Outlet />
+      <div className="fisrt-mobile">
+        <img src="images/mobile_application.svg" alt="" />
+        <h1>Website only mobile first</h1>
+      </div>
     </div>
   );
 }

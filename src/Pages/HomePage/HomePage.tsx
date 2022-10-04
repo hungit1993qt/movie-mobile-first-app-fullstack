@@ -5,13 +5,13 @@ import NewMovie from "Components/NewsMovie/NewMovie";
 import CinimaGroup from "Components/CinimaGroup/CinimaGroup";
 const HomePage = () => {
   return (
-    <>
+    <div className="bg-mobile">
       <h1 className={styles["title"]}>cinimax future</h1>
       <Carousel />
       <NewMovie />
       <HotRank />
       <CinimaGroup />
-    </>
+    </div>
   );
 };
 

@@ -1,24 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-:root{
-  --bg:#242C3B;
-  --title:#E5E5E5;
-  --f-title:20px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --bg: #242c3b;
+  --title: #e5e5e5;
+  --f-title: 20px;
 }
 
-body {  
-  font-family: 'Poppins', sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
   background-color: var(--bg) !important;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
-
 }
 .swiper-slide-shadow-left,
-.swiper-slide-shadow-right { 
+.swiper-slide-shadow-right {
   border-radius: 14px !important;
 }
-section{
+section {
   margin: 20px 0;
   padding: 0px 10px;
+}
+.fisrt-mobile {
+  display: none;
+}
+/*Tablet nhỏ(480 x 640)*/
+
+/*Ipad dọc(768 x 1024)*/
+@media screen and (min-width: 768px) {
+  .bg-mobile {
+    background: #000;
+    display: none;
+  }
+  .fisrt-mobile {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    transform: translatey(50%);    
+  }
+  .fisrt-mobile h1{
+    color: #F09819;
+    text-align: center;
+  }
+  .fisrt-mobile img{
+    width: 100%;
+  }
 }
