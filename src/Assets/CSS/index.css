@@ -23,6 +23,14 @@ section {
 .fisrt-mobile {
   display: none;
 }
+.swiper-pagination-bullet-active {
+  background-image: linear-gradient(
+    to right,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  ) !important;
+}
 /*Tablet nhỏ(480 x 640)*/
 
 /*Ipad dọc(768 x 1024)*/
@@ -37,13 +45,13 @@ section {
     align-items: center;
     flex-direction: column;
     margin: auto;
-    transform: translatey(50%);    
+    transform: translatey(50%);
   }
-  .fisrt-mobile h1{
-    color: #F09819;
+  .fisrt-mobile h1 {
+    color: #f09819;
     text-align: center;
   }
-  .fisrt-mobile img{
+  .fisrt-mobile img {
     width: 100%;
   }
 }

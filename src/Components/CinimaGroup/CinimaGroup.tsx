@@ -1,8 +1,36 @@
 import styles from "Assets/SCSS/CinimaGroup/CinimaGroup.module.scss";
+import { useState } from "react";
+import PopupListMove from "Components/CinimaGroup/ListMovie";
 
+import PopupListSeat from "Components/CinimaGroup/ListSeat";
+const dataMovie: any = [
+  {
+    title: "CGV - Vincom - Đà Nẵng",
+    adress: "Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị",
+  },
+  {
+    title: "CGV - Vincom - Đà Nẵng",
+    adress: "Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị",
+  },
+];
 function CinimaGroup() {
+  const [showPopupListMovie, setShowPopupListMovie] = useState(false);
+  const [showPopupTime, setShowPopupTime] = useState(false);
+  const [showPopupSeat, setShowPopupSeat] = useState(false);
+
   return (
     <section className={styles["CinimaGroup"]}>
+      <PopupListMove
+        trigger={showPopupListMovie}
+        setTrigger={setShowPopupListMovie}
+        dataMovie={dataMovie}
+      />
+      
+      
+  
+      <PopupListSeat trigger={showPopupSeat} setTrigger={setShowPopupSeat}>
+        <button>Seat</button>
+      </PopupListSeat>
       <div className={styles["CinimaGroup-Content"]}>
         <h1 className={styles["title"]}>hot rank</h1>
         <div className={styles["Content"]}>
@@ -19,21 +47,24 @@ function CinimaGroup() {
                 <img src="images/b1.jpg" alt="" />
               </label>
               <div className={styles["tab-content"]}>
-                <div className={styles["cinima-location"]}>
-                    <p>CGV - Vincom - Đà Nẵng</p>
-                    <span>Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị </span>
+                <div
+                  onClick={() => setShowPopupListMovie(true)}
+                  className={styles["cinima-location"]}
+                >
+                  <p>CGV - Vincom - Đà Nẵng</p>
+                  <span>Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị </span>
                 </div>
                 <div className={styles["cinima-location"]}>
-                    <p>CGV - Vincom - Quảng Trị</p>
-                    <span>Tầng 1, TTTM Vincom Center B - Hùng Vương </span>
+                  <p>CGV - Vincom - Quảng Trị</p>
+                  <span>Tầng 1, TTTM Vincom Center B - Hùng Vương </span>
                 </div>
                 <div className={styles["cinima-location"]}>
-                    <p>CGV - Vincom - HCM</p>
-                    <span>Tầng 1, TTTM Vincom Center B - Nguyễn Hữu Thọ </span>
+                  <p>CGV - Vincom - HCM</p>
+                  <span>Tầng 1, TTTM Vincom Center B - Nguyễn Hữu Thọ </span>
                 </div>
                 <div className={styles["cinima-location"]}>
-                    <p>CGV - Vincom - Hà Nội</p>
-                    <span>Tầng 1, TTTM Vincom Center B - Nguyễn Xiển </span>
+                  <p>CGV - Vincom - Hà Nội</p>
+                  <span>Tầng 1, TTTM Vincom Center B - Nguyễn Xiển </span>
                 </div>
               </div>
             </div>
@@ -42,7 +73,6 @@ function CinimaGroup() {
                 type="radio"
                 name="css-tabs"
                 id="tab-2"
-                
                 className={styles["tab-switch"]}
               />
               <label htmlFor="tab-2" className={styles["tab-label"]}>
@@ -55,7 +85,6 @@ function CinimaGroup() {
                 type="radio"
                 name="css-tabs"
                 id="tab-3"
-               
                 className={styles["tab-switch"]}
               />
               <label htmlFor="tab-3" className={styles["tab-label"]}>
@@ -68,7 +97,6 @@ function CinimaGroup() {
                 type="radio"
                 name="css-tabs"
                 id="tab-4"
-               
                 className={styles["tab-switch"]}
               />
               <label htmlFor="tab-4" className={styles["tab-label"]}>
