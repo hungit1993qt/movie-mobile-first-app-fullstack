@@ -8,6 +8,7 @@ import PageLoading from "Components/PageLoading/PageLoading";
 const HomePage = lazy(() => import("Pages/HomePage/HomePage"));
 const ListCheckout = lazy(() => import("Components/ListCheckout/ListCheckout"));
 const SearchNavbar = lazy(() => import("Components/SearchNavbar/SearchNavbar"));
+const DetailMovie = lazy(() => import("Components/DetailMovie/DetailMovie"));
 function App() {
   return (
     <ErrorBoundary>
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="" element={<HomeTemplate />}>
               <Route path="/search" element={<SearchNavbar />} />
+              <Route path="/detail" element={<DetailMovie />} />
               <Route
                 path="list-checkout"
                 element={

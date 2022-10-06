@@ -1,23 +1,10 @@
 import styles from "Assets/SCSS/NewsMovie/NewsMovie.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useNavigate } from "react-router-dom";
-const NewMovie = () => {
-  const navigate = useNavigate();
+const Recomand = () => {
   return (
     <section className={styles["NewsMovie"]}>
-      <div className={styles["gr-box"]}>
-        <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>disney</button>
-        </div>
-        <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>marvel</button>
-        </div>
-        <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>Pixar</button>
-        </div>
-      </div>
       <div className={styles["NewsMovie-Content"]}>
-        <h1 className={styles["title"]}>news movie</h1>
+        <h1 className={styles["title"]}>Recomand</h1>
         <Swiper
           slidesPerView={3}
           spaceBetween={12}
@@ -28,23 +15,15 @@ const NewMovie = () => {
         >
           <SwiperSlide className={styles["SwiperSlide"]}>
             <img
-            onClick={()=>navigate("/detail")}
               className={styles["Img-NewsMovie"]}
-              src="images/p4.jpg"
+              src="images/p8.jpg"
               alt=""
             />
           </SwiperSlide>
           <SwiperSlide className={styles["SwiperSlide"]}>
             <img
               className={styles["Img-NewsMovie"]}
-              src="images/p5.jpg"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p6.jpg"
+              src="images/p9.jpg"
               alt=""
             />
           </SwiperSlide>
@@ -55,10 +34,17 @@ const NewMovie = () => {
               alt=""
             />
           </SwiperSlide>
+          <SwiperSlide className={styles["SwiperSlide"]}>
+            <img
+              className={styles["Img-NewsMovie"]}
+              src="images/p4.jpg"
+              alt=""
+            />
+          </SwiperSlide>
         </Swiper>
       </div>
     </section>
   );
 };
 
-export default NewMovie;
+export default Recomand;
