@@ -3,7 +3,6 @@ import Carousel from "Components/Carousel/Carousel";
 import HotRank from "Components/HotRank/HotRank";
 import NewMovie from "Components/NewsMovie/NewMovie";
 import CinimaGroup from "Components/CinimaGroup/CinimaGroup";
-import NavbarFooter from "Components/Navbar/NavbarFooter";
 const HomePage = () => {
   return (
     <div className="bg-mobile">
@@ -12,7 +11,7 @@ const HomePage = () => {
       <NewMovie />
       <HotRank />
       <CinimaGroup />
-      <NavbarFooter />
+    
     </div>
   );
 };
