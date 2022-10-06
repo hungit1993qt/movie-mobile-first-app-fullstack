@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-import styles from "Assets/SCSS/CinimaGroup/Pay.module.scss";
-import PopupPaySuccess from "Components/CinimaGroup/PaySuccess";
+import styles from "Assets/SCSS/CinimaGroup/PaySuccess.module.scss";
 type Props = {
   trigger: boolean;
 
   setTrigger: any;
 };
 
-const Pay = (props: Props) => {
-  const [showPopupPaySuccess, setShowPopupPaySuccess] = useState(false);
+const PaySuccess = (props: Props) => {
   return props.trigger ? (
     <div className={styles["popup-list-movie"]}>
-      <PopupPaySuccess trigger={showPopupPaySuccess} setTrigger={setShowPopupPaySuccess} />
       <div className={styles["popup-inner"]}>
         <button
           onClick={() => props.setTrigger(null)}
@@ -37,8 +34,9 @@ const Pay = (props: Props) => {
               <b>355$</b>
             </div>
             <div className={styles["pay"]}>
-              <span className={styles["time-out"]}>Time out: 05:00 s</span>
-              <img onClick={()=>setShowPopupPaySuccess(true)} src="images/momoqr.jpg" alt="" />
+              <img src="images/paysuccess.png" alt="" />
+              <span className={styles["title"]}>Payment Success</span>
+              <span className={styles["descript"]}>Please check the information from the email, thanks.</span>
             </div>
           </div>
         </div>
@@ -47,4 +45,4 @@ const Pay = (props: Props) => {
   ) : null;
 };
 
-export default Pay;
+export default PaySuccess;

@@ -1,0 +1,107 @@
+.popup-list-movie {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 510;
+
+  .popup-inner {
+    position: relative;
+    //padding: 32px;
+    width: 95%;
+    background-color: #242c3b;
+    border-radius: 14px;
+    border-radius: 7px 7px 0 0;
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      background-color: transparent;
+      border: none;
+      i {
+        font-size: 3rem;
+        color: #ff512f;
+      }
+    }
+    .info-cinima {
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 1rem 1rem 0 1rem;
+      padding-bottom: 0.5rem;
+      line-height: 1.2rem;
+      img {
+        height: 70px;
+        width: 120px;
+      }
+      .movie-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        margin-left: 10px;
+        .movie-name {
+          color: var(--title);
+          font-size: 18px;
+        }
+        .movie-description {
+          color: var(--title);
+          opacity: 0.6;
+          font-size: 14px;
+        }
+      }
+      border-bottom: 1px solid var(--title);
+    }
+    .pay-detail {
+      margin: 0.5rem 1rem 1rem 1rem;
+      .total-detail {
+        .total {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          color: var(--title);
+          margin-top: 0px;
+          align-items: center;
+          text-align: center;
+          font-size: 1.2rem;
+          border-bottom: 1px solid var(--title);
+          padding-bottom: 0.5rem;
+        }
+        .pay {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 1rem;
+          .title {
+            text-align: center;
+            display: block;
+            margin: 10px 0;
+            color: #02ff49;
+            font-size: 20px;
+            font-weight: 900;
+          }
+          .descript {
+            text-align: center;
+            display: block;
+           
+            color:var(--title);
+            opacity: 0.8;
+            font-size: 14px;
+          }
+          img {
+            width: 60%;
+
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
