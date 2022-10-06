@@ -15,7 +15,7 @@ const dataMovie: any = [
 ];
 function CinimaGroup() {
   const [showPopupListMovie, setShowPopupListMovie] = useState(false);
-  const [showPopupTime, setShowPopupTime] = useState(false);
+ 
   const [showPopupSeat, setShowPopupSeat] = useState(false);
 
   return (

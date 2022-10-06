@@ -8,7 +8,7 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--bg) !important;
-  box-sizing: border-box;
+  box-sizing: border-box ;
   margin: 0 auto;
   padding: 0;
 }
@@ -30,6 +30,9 @@ section {
     #f09819 51%,
     #ff512f 100%
   ) !important;
+}
+::-webkit-scrollbar {
+  width: 0px;
 }
 /*Tablet nhỏ(480 x 640)*/
 
