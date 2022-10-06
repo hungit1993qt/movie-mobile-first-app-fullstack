@@ -201,7 +201,7 @@ const ListSeat = (props: Props) => {
             <span>D5 </span>
           </div>
           <div className={styles["checkout"]}>
-            <i className="fa fa-money-check-alt"></i>
+            <i onClick={()=>setShowPopupCheckout(true)} className="fa fa-money-check-alt"></i>
             checkout
           </div>
         </div>

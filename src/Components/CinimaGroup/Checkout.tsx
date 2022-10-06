@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "Assets/SCSS/CinimaGroup/ListShowTime.module.scss";
-import PopupShowSeat from "Components/CinimaGroup/ListSeat";
+import styles from "Assets/SCSS/CinimaGroup/Checkout.module.scss";
+import PopupShowPay from "Components/CinimaGroup/Pay";
 type Props = {
   trigger: boolean;
 
@@ -8,10 +8,10 @@ type Props = {
 };
 
 const ListShowTime = (props: Props) => {
-  const [showPopupSeat, setShowPopupSeat] = useState(false);
+  const [showPopupPay, setShowPopupPay] = useState(false);
   return props.trigger ? (
     <div className={styles["popup-list-movie"]}>
-      <PopupShowSeat trigger={showPopupSeat} setTrigger={setShowPopupSeat} />
+      <PopupShowPay trigger={showPopupPay} setTrigger={setShowPopupPay} />
       <div className={styles["popup-inner"]}>
         <button
           onClick={() => props.setTrigger(null)}
@@ -29,44 +29,78 @@ const ListShowTime = (props: Props) => {
             <span className={styles["movie-description"]}>06-10-2022</span>
           </div>
         </div>
-        <div className={styles["list-showtimes"]}>
-          <div className={styles["showtimes"]}>
-            <div className={styles["title-showtimes"]}>
-              <span>2D</span>
-            </div>
-            <span onClick={()=>setShowPopupSeat(true)} className={styles["Times"]}>10:30</span>
-            <span className={styles["Times"]}>12:30</span>
-            <span className={styles["Times"]}>14:10</span>
-            <span className={styles["Times"]}>19:40</span>
+        <div className={styles["checkout-detail"]}>
+          <div className={styles["detail-title"]}>
+            <b>No.</b>
+            <b>Seat</b>
+            <b>Type</b>
+            <b>Price</b>
           </div>
-          <div className={styles["showtimes"]}>
-            <div className={styles["title-showtimes"]}>
-              <span>3D</span>
+          <div className={styles["detail-content"]}>
+            <div className={styles["seat-booked"]}>
+              <b>1</b>
+              <b>D1</b>
+              <b>VIP</b>
+              <b>75$</b>
             </div>
-            <span className={styles["Times"]}>11:40</span>
-            <span className={styles["Times"]}>13:20</span>
-            <span className={styles["Times"]}>15:50</span>
-            <span className={styles["Times"]}>20:10</span>
+            <div className={styles["seat-booked"]}>
+              <b>2</b>
+              <b>D2</b>
+              <b>VIP</b>
+              <b>75$</b>
+            </div>
+            <div className={styles["seat-booked"]}>
+              <b>3</b>
+              <b>D3</b>
+              <b>VIP</b>
+              <b>75$</b>
+            </div>
+            <div className={styles["seat-booked"]}>
+              <b>4</b>
+              <b>D1</b>
+              <b>ECO</b>
+              <b>60$</b>
+            </div>
+            <div className={styles["seat-booked"]}>
+              <b>5</b>
+              <b>D5</b>
+              <b>ECO</b>
+              <b>60$</b>
+            </div>
           </div>
-          <div className={styles["showtimes"]}>
-            <div className={styles["title-showtimes"]}>
-              <span>4D</span>
+          <div className={styles["total-detail"]}>
+            <div className={styles["total"]}>
+              <b>Total:</b>
+
+              <b>355$</b>
             </div>
-            <span className={styles["Times"]}>11:40</span>
-            <span className={styles["Times"]}>13:20</span>
-            
           </div>
-          <div className={styles["showtimes"]}>
-            <div className={styles["title-showtimes"]}>
-              <span>5D</span>
-            </div>
-            <span className={styles["Times"]}>11:40</span>
-            <span className={styles["Times"]}>13:20</span>
-            <span className={styles["Times"]}>15:50</span>
-            
+          <div className={styles["type-pay"]}>
+            <form action="">
+              <div className={styles["type"]}>
+                <img src="images/mono.jpg" alt="" />
+                <input type="radio" name="type" />
+              </div>
+              <div className={styles["type"]}>
+                <img src="images/mb.png" alt="" />
+                <input type="radio" name="type" />
+              </div>
+              <div className={styles["type"]}>
+                <img src="images/pp.webp" alt="" />
+                <input type="radio" name="type" />
+              </div>
+              <div className={styles["type"]}>
+                <img src="images/amazon.png" alt="" />
+                <input type="radio" name="type" />
+              </div>
+              <div className={styles["type"]}>
+                <img src="images/qr.png" alt="" />
+                <input type="radio" name="type" />
+              </div>
+            </form>
+            <i onClick={()=>setShowPopupPay(true)} className="fab fa-cc-amazon-pay"></i>
           </div>
         </div>
-        
       </div>
     </div>
   ) : null;

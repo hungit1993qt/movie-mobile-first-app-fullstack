@@ -1,0 +1,130 @@
+.popup-list-movie {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 510;
+
+  .popup-inner {
+    position: relative;
+    //padding: 32px;
+    width: 95%;
+    background-color: #242c3b;
+    border-radius: 14px;
+    border-radius: 7px 7px 0 0;
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      background-color: transparent;
+      border: none;
+      i {
+        font-size: 3rem;
+        color: #ff512f;
+      }
+    }
+    .info-cinima {
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 1rem;
+      padding-bottom: 0.5rem;
+      line-height: 1.2rem;
+      img {
+        height: 70px;
+        width: 120px;
+      }
+      .movie-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        margin-left: 10px;
+        .movie-name {
+          color: var(--title);
+          font-size: 18px;
+        }
+        .movie-description {
+          color: var(--title);
+          opacity: 0.6;
+          font-size: 14px;
+        }
+      }
+      border-bottom: 1px solid var(--title);
+    }
+    .checkout-detail {
+      margin: 1rem;
+      .detail-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        color: var(--title);
+        text-align: center;
+      }
+      .detail-content {
+        .seat-booked {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          color: var(--title);
+          margin-top: 10px;
+          align-items: center;
+          text-align: center;
+          &:nth-child(5) {
+            border-bottom: 1px solid var(--title);
+            padding-bottom: 0.5rem;
+          }
+        }
+      }
+      .total-detail {
+        .total {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          color: var(--title);
+          margin-top: 10px;
+          align-items: center;
+          text-align: center;
+          font-size: 1.2rem;
+          border-bottom: 1px solid var(--title);
+          padding-bottom: 0.5rem;
+        }
+      }
+      .type-pay {
+        i {
+          text-align: center;
+          display: block;
+          font-size: 3.5rem;          
+          margin-top: 1rem;
+          color: #02ff49;
+        }
+        form {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          margin-top: 1.5rem;
+          .type {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img {
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              margin-bottom: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
