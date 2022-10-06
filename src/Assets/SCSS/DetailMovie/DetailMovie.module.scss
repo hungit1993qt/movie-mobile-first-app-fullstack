@@ -104,8 +104,9 @@
       align-items: center;
       gap: 10px;
       color: var(--title);
-
-      padding: 5px 15px 5px 15px;
+      box-sizing: border-box;
+      box-shadow: rgba(99, 97, 97, 0.24) 0px 3px 8px;
+      padding: 10px 15px 10px 15px;
       img {
         width: 40px;
         height: 40px;
