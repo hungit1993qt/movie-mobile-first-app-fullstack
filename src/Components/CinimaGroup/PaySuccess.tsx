@@ -35,7 +35,7 @@ const PaySuccess = (props: Props) => {
               <b>355$</b>
             </div>
             <div className={styles["pay"]}>
-              <img onClick={()=>navigate("/s")} src="images/paysuccess.png" alt="" />
+              <img onClick={()=>navigate("/")} src="images/paysuccess.png" alt="" />
               <span className={styles["title"]}>Payment Success</span>
               <span className={styles["descript"]}>
                 Please check the information from the email, thanks.
