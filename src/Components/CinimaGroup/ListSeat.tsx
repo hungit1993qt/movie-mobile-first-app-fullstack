@@ -2,7 +2,6 @@ import React from "react";
 import styles from "Assets/SCSS/CinimaGroup/ListSeat.module.scss";
 type Props = {
   trigger: boolean;
-  children: any;
   setTrigger: any;
 };
 
@@ -16,7 +15,7 @@ const ListMovie = (props: Props) => {
         >
           <i className="fa fa-times-circle"></i>
         </button>
-        {props.children}
+     
       </div>
     </div>
   ) : null;

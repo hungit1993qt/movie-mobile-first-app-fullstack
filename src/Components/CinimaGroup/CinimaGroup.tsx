@@ -16,7 +16,7 @@ const dataMovie: any = [
 function CinimaGroup() {
   const [showPopupListMovie, setShowPopupListMovie] = useState(false);
  
-  const [showPopupSeat, setShowPopupSeat] = useState(false);
+ 
 
   return (
     <section className={styles["CinimaGroup"]}>
@@ -28,9 +28,7 @@ function CinimaGroup() {
       
       
   
-      <PopupListSeat trigger={showPopupSeat} setTrigger={setShowPopupSeat}>
-        <button>Seat</button>
-      </PopupListSeat>
+      
       <div className={styles["CinimaGroup-Content"]}>
         <h1 className={styles["title"]}>hot rank</h1>
         <div className={styles["Content"]}>
