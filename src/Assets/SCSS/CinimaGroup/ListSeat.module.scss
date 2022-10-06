@@ -16,7 +16,7 @@
     width: 95%;
     background-color: #242c3b;
     border-radius: 14px;
-    min-height: 420px;
+    min-height: 500px;
     border-radius: 7px 7px 0 0;
     .close-btn {
       position: absolute;
@@ -88,12 +88,12 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 0.7rem;
-        i{
-          &:first-child{
-            color: #02FF49;
+        i {
+          &:first-child {
+            color: #02ff49;
           }
-          &:last-child{
-            color: #FF0202;
+          &:last-child {
+            color: #ff0202;
           }
         }
         .seat {
@@ -104,20 +104,45 @@
           background-color: #fff;
           width: 30px;
           height: 25px;
-          border-radius: 7px;    
-          font-size: 0.7rem;      
-          &:nth-child(2){
-            background-color: #02FF49;
+          border-radius: 7px;
+          font-size: 0.7rem;
+          &:nth-child(2) {
+            background-color: #02ff49;
           }
-          &:nth-child(4){
-            background-color: #FFE500;
+          &:nth-child(4) {
+            background-color: #ffe500;
           }
-          &:nth-child(5){
-            background-color: #FF0202;
+          &:nth-child(5) {
+            background-color: #ff0202;
           }
-         
+
           span {
             font-weight: 900;
+          }
+        }
+      }
+      .seat-select {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        b {
+          color: var(--title);
+        }
+        span {
+          color: #02ff49;
+          margin-left: 5px;
+        }
+        .checkout {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          color: #fff;
+          i {
+            font-size: 3rem;
+            color: #02ff49;
           }
         }
       }
