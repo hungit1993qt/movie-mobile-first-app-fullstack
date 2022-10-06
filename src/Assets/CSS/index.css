@@ -11,6 +11,7 @@ body {
   box-sizing: border-box ;
   margin: 0 auto;
   padding: 0;
+  -webkit-overflow-scrolling: touch;
 }
 .swiper-slide-shadow-left,
 .swiper-slide-shadow-right {
