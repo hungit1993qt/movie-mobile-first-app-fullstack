@@ -23,7 +23,7 @@ const DetailMovie = () => {
             2021 - 1h 30m - War, Family, Comedy, Fantasy, Animation,... HD -
             Vision - 5.1
           </span>
-          <br />
+
           <span className={styles["description"]}>
             Sixteen bowlers are picked by the captains, forming four teams of
             five bowlers, including the captains In the mounted arms a captain
@@ -35,14 +35,69 @@ const DetailMovie = () => {
         </div>
         <div className={styles["cast-detail"]}>
           <span className={styles["title"]}>Cast</span>
-          <br />
+
           <span className={styles["description"]}>
             Angela Bassett, Letitia Wright, Winston Duke, Danai Gurira, Florence
             Kasumba, Lupita ...
           </span>
         </div>
       </div>
-      <div className={styles["comment-movie"]}></div>
+      <div className={styles["comment-movie"]}>
+        <span className={styles["title"]}>Comment</span>
+        <span className={styles["description"]}>
+          <input type="text" placeholder="Submit your comment..." />
+        </span>
+      </div>
+      <div className={styles["list-comment"]}>
+        <div className={styles["comment"]}>
+          <img src="images/p1.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, the actors are very bloody...
+          </span>
+        </div>
+        <div className={styles["comment"]}>
+          <img src="images/avatar.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, 
+          </span>
+        </div>
+        <div className={styles["comment"]}>
+          <img src="images/p5.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, the actors ...
+          </span>
+        </div>
+        <div className={styles["comment"]}>
+          <img src="images/p6.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, the actors are very bloody...
+          </span>
+        </div>
+        <div className={styles["comment"]}>
+          <img src="images/p1.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, the actors are very bloody...
+          </span>
+        </div>
+        <div className={styles["comment"]}>
+          <img src="images/p3.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, 
+          </span>
+        </div>
+        <div className={styles["comment"]}>
+          <img src="images/p5.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, the actors ...
+          </span>
+        </div>
+        <div className={styles["comment"]}>
+          <img src="images/p6.jpg" alt="" />
+          <span className={styles["comment-content"]}>
+            This movie is very interesting, the actors are very bloody...
+          </span>
+        </div>
+      </div>
       <Recomand />
     </div>
   );
