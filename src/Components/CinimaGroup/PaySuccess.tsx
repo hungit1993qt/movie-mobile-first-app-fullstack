@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import styles from "Assets/SCSS/CinimaGroup/PaySuccess.module.scss";
+import { useNavigate } from "react-router-dom";
 type Props = {
   trigger: boolean;
-
   setTrigger: any;
 };
 
 const PaySuccess = (props: Props) => {
+  const navigate = useNavigate();
   return props.trigger ? (
     <div className={styles["popup-list-movie"]}>
       <div className={styles["popup-inner"]}>
         <button
-          onClick={() => props.setTrigger(null)}
+          onClick={() => props.setTrigger(false)}
           className={styles["close-btn"]}
         >
           <i className="fa fa-times-circle"></i>
@@ -34,9 +35,11 @@ const PaySuccess = (props: Props) => {
               <b>355$</b>
             </div>
             <div className={styles["pay"]}>
-              <img src="images/paysuccess.png" alt="" />
+              <img onClick={()=>navigate("/s")} src="images/paysuccess.png" alt="" />
               <span className={styles["title"]}>Payment Success</span>
-              <span className={styles["descript"]}>Please check the information from the email, thanks.</span>
+              <span className={styles["descript"]}>
+                Please check the information from the email, thanks.
+              </span>
             </div>
           </div>
         </div>
