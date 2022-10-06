@@ -16,13 +16,11 @@
     width: 95%;
     background-color: #242c3b;
     border-radius: 14px;
-    min-height: 500px;
     border-radius: 7px 7px 0 0;
     .close-btn {
       position: absolute;
-      bottom: 10px;
-      right: 50%;
-      transform: translate(50%);
+      top: 5px;
+      right: 0;
       background-color: transparent;
       border: none;
       i {
@@ -123,10 +121,7 @@
       }
       .seat-select {
         margin-top: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+
         b {
           color: var(--title);
         }
@@ -134,16 +129,17 @@
           color: #02ff49;
           margin-left: 5px;
         }
-        .checkout {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: center;
-          color: #fff;
-          i {
-            font-size: 3rem;
-            color: #02ff49;
-          }
+      }
+      .checkout {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        color: #fff;
+        margin-top: 1rem;
+        i {
+          font-size: 3rem;
+          color: #02ff49;
         }
       }
     }

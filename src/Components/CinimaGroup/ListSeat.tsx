@@ -180,7 +180,7 @@ const ListSeat = (props: Props) => {
           </div>
           <div className={styles["seat-note"]}>
             <i className="fa fa-sign-out-alt"></i>
-            <div className={styles["seat"]}></div>
+            <div className={styles["seat"]}><span>V</span></div>
             <div className={styles["seat"]}>
               <span>ECO</span>
             </div>
@@ -199,10 +199,10 @@ const ListSeat = (props: Props) => {
             <span>D3, </span>
             <span>D4, </span>
             <span>D5 </span>
-            <div className={styles["checkout"]}>
-              <i className="fa fa-money-check-alt"></i>
-              checkout
-            </div>
+          </div>
+          <div className={styles["checkout"]}>
+            <i className="fa fa-money-check-alt"></i>
+            checkout
           </div>
         </div>
       </div>
