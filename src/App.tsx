@@ -22,7 +22,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route index element={<HomePage />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="*" element={<Navigate to={""} />} />
             </Route>
           </Routes>
