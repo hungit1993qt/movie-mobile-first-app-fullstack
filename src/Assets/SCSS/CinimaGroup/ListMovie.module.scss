@@ -35,19 +35,19 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 5px 0;
+      padding: 10px 0 5px 0;
       border-radius: 7px 7px 0 0;
-      background-color:#ff512f;
-      color:#242c3b;
-      
+      border-bottom: 1px solid var(--title);
+      color:var(--title);
+      line-height: 1.3rem;
       .name-cinima {
         font-size: 1rem;
-        font-weight:900;
+        font-weight:700;
 
       }
       .address-cinima {
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 400;
         opacity: 0.8;
       }
     }

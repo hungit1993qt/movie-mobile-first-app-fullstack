@@ -5,7 +5,7 @@ import HomeTemplate from "./Templates/HomeTemplate";
 import ProtectedRoute from "Routes/ProtectedRoute";
 
 const HomePage = lazy(() => import("Pages/HomePage/HomePage"));
-const Checkout = lazy(() => import("Pages/Checkout/Checkout"));
+const ListCheckout = lazy(() => import("Pages/ListCheckout/ListCheckout"));
 function App() {
   return (
     <ErrorBoundary>
@@ -15,10 +15,10 @@ function App() {
           <Routes>
             <Route path="" element={<HomeTemplate />}>
               <Route
-                path="checkout"
+                path="list-checkout"
                 element={
                   <ProtectedRoute>
-                    <Checkout />
+                    <ListCheckout />
                   </ProtectedRoute>
                 }
               />

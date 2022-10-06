@@ -36,7 +36,7 @@ const PaySuccess = (props: Props) => {
             </div>
             <div className={styles["pay"]}>
               <img
-                onClick={() => navigate("/s")}
+                onClick={() => navigate("/list-checkout")}
                 src="images/paysuccess.png"
                 alt=""
               />

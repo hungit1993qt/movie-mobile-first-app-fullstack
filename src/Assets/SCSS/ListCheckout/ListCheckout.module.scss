@@ -1,0 +1,74 @@
+.list-checkout {
+  position: relative;
+  //padding: 32px;
+  width: 100%;
+  background-color: #242c3b;
+  height: 100%;
+  .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    z-index: 5;
+    i {
+      font-size: 3rem;
+      color: #ff512f;
+    }
+  }
+  .info-booked {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px 7px 0 0;
+    border-bottom: 1px solid var(--title);
+    color: var(--title);
+    line-height: 1.3rem;
+    height: 65px;
+    position: fixed;
+    background-color: #242c3b !important;
+    right: 50%;
+    transform: translate(50%);
+    width: 100%;
+    z-index: 4;
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+  .list-movies {
+    height: 100%;
+    overflow-y: scroll;
+    padding-top: 70px;
+    .movie-items {
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 1rem 0 1rem 1rem;
+      line-height: 1.2rem;
+      img {
+        height: 70px;
+        width: 120px;
+      }
+      .movie-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        margin-left: 10px;
+        .movie-name {
+          color: var(--title);
+          font-size: 18px;
+        }
+        .movie-description {
+          color: var(--title);
+          opacity: 0.6;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
