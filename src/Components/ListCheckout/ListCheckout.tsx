@@ -1,11 +1,10 @@
-import React, { useState } from "react";
 import styles from "Assets/SCSS/ListCheckout/ListCheckout.module.scss";
 import { useNavigate } from "react-router-dom";
 const ListCheckout = () => {
   const navigate = useNavigate();
   return (
     <div className={styles["list-checkout"]}>
-      <button onClick={()=>navigate("/")} className={styles["close-btn"]}>
+      <button onClick={() => navigate("/")} className={styles["close-btn"]}>
         <i className="fa fa-times-circle"></i>
       </button>
       <div className={styles["info-booked"]}>
@@ -137,9 +136,7 @@ const ListCheckout = () => {
           </div>
         </div>
       </div>
-      
     </div>
-    
   );
 };
 
