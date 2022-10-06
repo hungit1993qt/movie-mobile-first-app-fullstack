@@ -22,26 +22,27 @@
     width: 100%;
     z-index: 4;
     input {
+      box-sizing: border-box;
       width: 95%;
-      padding: 13px 0px;
+      padding: 13px 2.2rem;
       border-radius: 7px;
-      &::-webkit-input-placeholder {
-        padding-left: 2.2rem;
-        opacity: 0.8;
-      }
-      &:-ms-input-placeholder {
-        padding-left: 2.2rem;
-        opacity: 0.8;
-      }
-      &::placeholder {
-        padding-left: 2.2rem;
-        opacity: 0.8;
-      }
+      // &::-webkit-input-placeholder {
+      //   padding-left: 2.2rem;
+      //   opacity: 0.8;
+      // }
+      // &:-ms-input-placeholder {
+      //   padding-left: 2.2rem;
+      //   opacity: 0.8;
+      // }
+      // &::placeholder {
+      //   padding-left: 2.2rem;
+      //   opacity: 0.8;
+      // }
     }
     i {
       position: absolute;
       color: #242c3b;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       &:nth-child(1) {
         left: 20px;
       }
