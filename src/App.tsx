@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ErrorBoundary from "Components/ErrorBoundary/ErrorBoundary";
 import HomeTemplate from "./Templates/HomeTemplate";
 import ProtectedRoute from "Routes/ProtectedRoute";
+import PageLoading from "Components/PageLoading/PageLoading";
 
 const HomePage = lazy(() => import("Pages/HomePage/HomePage"));
 const ListCheckout = lazy(() => import("Components/ListCheckout/ListCheckout"));
@@ -11,7 +12,7 @@ function App() {
   return (
     <ErrorBoundary>
       {/* Suspense dùng để hiện thị ra fallback UI khi component đang được load */}
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<PageLoading />}>
         <BrowserRouter>
           <Routes>
             <Route path="" element={<HomeTemplate />}>
