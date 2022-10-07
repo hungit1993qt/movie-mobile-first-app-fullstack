@@ -41,7 +41,7 @@ const NavbarFooter = () => {
               <i className="fa fa-info-circle"></i>
               <b>Information</b>
             </div>
-            <div className={stylesuser["btn-items"]}>
+            <div onClick={() => navigate("/list-checkout")} className={stylesuser["btn-items"]}>
               <i className="fa fa-check-circle"></i>
               <b>List booked</b>
             </div>
