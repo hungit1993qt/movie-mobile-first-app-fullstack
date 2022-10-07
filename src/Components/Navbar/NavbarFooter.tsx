@@ -2,12 +2,15 @@ import styles from "Assets/SCSS/Navbar/NavbarFooter.module.scss";
 import stylesuser from "Assets/SCSS/Navbar/NavbarUser.module.scss";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Information from "./Information";
 const NavbarFooter = () => {
   const navigate = useNavigate();
   const [showNavbarUser, setShowNavbarUser] = useState(false);
+  const [showPopupInfo, setShowPopupInfo] = useState(false);
   return (
     <>
       <section className={styles["navbar-footer"]}>
+        <Information trigger={showPopupInfo} setTrigger={setShowPopupInfo} />
         <i
           onClick={() => {
             setShowNavbarUser(false);
@@ -52,7 +55,7 @@ const NavbarFooter = () => {
             </div>
           </div>
           <div className={stylesuser["btn-func"]}>
-            <div className={stylesuser["btn-items"]}>
+            <div onClick={()=>setShowPopupInfo(true)} className={stylesuser["btn-items"]}>
               <i className="fa fa-info-circle"></i>
               <b>Information</b>
             </div>
