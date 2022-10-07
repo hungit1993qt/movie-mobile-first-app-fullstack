@@ -1,4 +1,4 @@
-import styles from "Assets/SCSS/NewsMovie/NewsMovie.module.scss";
+import styles from "Assets/SCSS/Recomand/Recomand.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 const Recomand = () => {
   return (
@@ -11,7 +11,7 @@ const Recomand = () => {
           pagination={{
             clickable: true,
           }}
-          className="mySwiper"
+          className={styles["mySwiper"]}
         >
           <SwiperSlide className={styles["SwiperSlide"]}>
             <img
