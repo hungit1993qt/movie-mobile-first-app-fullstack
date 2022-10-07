@@ -16,11 +16,12 @@
     width: 95%;
     background-color: #242c3b;
     border-radius: 14px;
-    min-height: 480px;
+    height: 70%;
     border-radius: 7px 7px 0 0;
+    overflow: hidden;
     .close-btn {
       position: absolute;
-      bottom: 10px;
+      bottom: 0;
       right: 50%;
       transform: translate(50%);
       background-color: transparent;
@@ -51,9 +52,10 @@
       }
     }
     .list-movies {
-      padding: 10px;
-      height: 350px;
-      overflow-y: scroll;
+      box-sizing: border-box;
+      padding: 10px 0 6rem 10px;
+      height: 100%;
+      overflow-y:scroll;
       .movie-items {
         height: 70px;
         display: flex;
