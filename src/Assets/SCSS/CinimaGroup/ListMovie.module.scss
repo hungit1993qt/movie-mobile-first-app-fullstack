@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 510;
-
+ 
   .popup-inner {
     position: relative;
     //padding: 32px;
@@ -38,12 +38,11 @@
       padding: 10px 0 5px 0;
       border-radius: 7px 7px 0 0;
       border-bottom: 1px solid var(--title);
-      color:var(--title);
+      color: var(--title);
       line-height: 1.3rem;
       .name-cinima {
         font-size: 1rem;
-        font-weight:700;
-
+        font-weight: 700;
       }
       .address-cinima {
         font-size: 12px;

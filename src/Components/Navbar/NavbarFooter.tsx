@@ -9,11 +9,26 @@ const NavbarFooter = () => {
     <>
       <section className={styles["navbar-footer"]}>
         <i
-          onClick={() => navigate(-1)}
+          onClick={() => {
+            setShowNavbarUser(false);
+            navigate(-1);
+          }}
           className="fa fa-arrow-alt-circle-left"
         ></i>
-        <i onClick={() => navigate("/search")} className="fa fa-search"></i>
-        <i onClick={() => navigate("/")} className="fa fa-home"></i>
+        <i
+          onClick={() => {
+            setShowNavbarUser(false);
+            navigate("/search");
+          }}
+          className="fa fa-search"
+        ></i>
+        <i
+          onClick={() => {
+            setShowNavbarUser(false);
+            navigate("/");
+          }}
+          className="fa fa-home"
+        ></i>
         <img
           onClick={() => setShowNavbarUser(!showNavbarUser)}
           src="images/avatar.jpg"
@@ -41,7 +56,10 @@ const NavbarFooter = () => {
               <i className="fa fa-info-circle"></i>
               <b>Information</b>
             </div>
-            <div onClick={() => navigate("/list-checkout")} className={stylesuser["btn-items"]}>
+            <div
+              onClick={() => navigate("/list-checkout")}
+              className={stylesuser["btn-items"]}
+            >
               <i className="fa fa-check-circle"></i>
               <b>List booked</b>
             </div>

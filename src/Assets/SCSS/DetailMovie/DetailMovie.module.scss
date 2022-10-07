@@ -114,6 +114,7 @@
       }
       &:nth-child(2n + 1) {
         flex-direction: row-reverse;
+        text-align:justify;
       }
       .comment-content {
         font-weight: 200;

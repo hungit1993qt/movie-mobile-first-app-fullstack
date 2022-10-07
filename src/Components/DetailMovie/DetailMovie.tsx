@@ -1,17 +1,23 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 import styles from "Assets/SCSS/DetailMovie/DetailMovie.module.scss";
 import Recomand from "./Recomand";
+import Trainler from "./Trainler";
 // import { useNavigate } from "react-router-dom";
 const DetailMovie = () => {
   // const navigate = useNavigate();
+  const [showPopupTrainler, setShowPopupTrainler] = useState(false);
   return (
     <div className={styles["detail-movie"]}>
+      <Trainler trigger={showPopupTrainler} setTrigger={setShowPopupTrainler} />
       <div className={styles["detail"]}>
         <div className={styles["img-detail"]}>
           <img src="images/detail.webp" alt="" />
         </div>
         <div className={styles["group-btn"]}>
-          <div className={styles["play-trainler"]}>
+          <div
+            onClick={() => setShowPopupTrainler(true)}
+            className={styles["play-trainler"]}
+          >
             <i className="fa fa-play"></i>
             Trainler
           </div>
