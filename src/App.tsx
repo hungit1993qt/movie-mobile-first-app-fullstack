@@ -19,6 +19,7 @@ function App() {
             <Route path="" element={<HomeTemplate />}>
               <Route path="/search" element={<SearchNavbar />} />
               <Route path="/detail" element={<DetailMovie />} />
+
               <Route
                 path="list-checkout"
                 element={
