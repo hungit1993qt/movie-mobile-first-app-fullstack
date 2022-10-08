@@ -16,7 +16,7 @@
     width: 90%;
     background-color: #242c3b;
     border-radius: 14px;
- 
+
     .close-btn {
       position: absolute;
       bottom: -4rem;
@@ -67,38 +67,48 @@
             font-weight: 300;
             font-size: 1rem;
             opacity: 0.8;
-            
           }
-          b {
+          input,textarea  {
             font-weight: 500;
-            font-size: 14px;
+            font-size: 14px;            
+            margin-top: 1rem;
+            background-color: #242c3b;
+            width: 100%;
+            border: none;
             border-bottom: solid 1px var(--title);
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-end;
-
+            color: var(--title);
             i {
               color: var(--title);
               margin: 0;
               padding: 0;
-              
+
               &::before {
                 font-size: 1.5rem;
               }
             }
           }
-          &:first-child{
-            b{
-              margin-top: 20px;
+          &:nth-child(2) {
+            textarea {
+              box-sizing: border-box;
+              min-height: 8rem;
+              background: none;
+              border: solid 1px var(--title);
+              padding: 1rem;
+              line-height: 1.2rem;
+              font-weight:lighter;
+              opacity: 0.8;
             }
           }
         }
-        .gender{
-          display: flex;
-          flex-direction: row;
-          justify-content: space-around;
-          align-items: center;
+        button {
+          width: 65%;
+          text-align: center;
+          margin: 0 auto;
+          padding: 10px 0;
+          margin-top: 1.5rem;
+          border-radius: 7px;
+          font-size: 1rem;
+          font-weight: bold;
         }
       }
     }

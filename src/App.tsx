@@ -9,6 +9,9 @@ const HomePage = lazy(() => import("Pages/HomePage/HomePage"));
 const ListCheckout = lazy(() => import("Components/ListCheckout/ListCheckout"));
 const SearchNavbar = lazy(() => import("Components/SearchNavbar/SearchNavbar"));
 const DetailMovie = lazy(() => import("Components/DetailMovie/DetailMovie"));
+const Login = lazy(() => import("Components/Navbar/Login"));
+const Register = lazy(() => import("Components/Navbar/Register"));
+
 function App() {
   return (
     <ErrorBoundary>
@@ -19,7 +22,8 @@ function App() {
             <Route path="" element={<HomeTemplate />}>
               <Route path="/search" element={<SearchNavbar />} />
               <Route path="/detail" element={<DetailMovie />} />
-
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
               <Route
                 path="list-checkout"
                 element={

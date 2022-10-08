@@ -16,7 +16,7 @@
     width: 90%;
     background-color: #242c3b;
     border-radius: 14px;
- 
+
     .close-btn {
       position: absolute;
       bottom: -4rem;
@@ -35,7 +35,7 @@
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
-      padding: 2.5rem;
+      padding: 2.5rem 2.5rem 1.5rem 2.5rem ;
       .title-info {
         width: 100%;
         display: flex;
@@ -67,7 +67,6 @@
             font-weight: 300;
             font-size: 1rem;
             opacity: 0.8;
-            
           }
           b {
             font-weight: 500;
@@ -77,28 +76,24 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: flex-end;
-
-            i {
-              color: var(--title);
-              margin: 0;
-              padding: 0;
-              
-              &::before {
-                font-size: 1.5rem;
-              }
-            }
-          }
-          &:first-child{
-            b{
-              margin-top: 20px;
-            }
+            margin-top: 2rem;
           }
         }
-        .gender{
+        .gender {
           display: flex;
           flex-direction: row;
           justify-content: space-around;
           align-items: center;
+        }
+        button {
+          width: 65%;
+          text-align: center;
+          margin: 0 auto;
+          padding: 10px 0;
+          margin-top: 1.5rem;
+          border-radius: 7px;
+          font-size: 1rem;
+          font-weight: bold;
         }
       }
     }
