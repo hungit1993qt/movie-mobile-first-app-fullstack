@@ -4,9 +4,9 @@ const ListCheckout = () => {
   const navigate = useNavigate();
   return (
     <div className={styles["list-checkout"]}>
-      <button onClick={() => navigate("/")} className={styles["close-btn"]}>
+      {/* <button onClick={() => navigate("/")} className={styles["close-btn"]}>
         <i className="fa fa-times-circle"></i>
-      </button>
+      </button> */}
       <div className={styles["info-booked"]}>
         <span className={styles["title"]}>LIST BOOKED</span>
       </div>
