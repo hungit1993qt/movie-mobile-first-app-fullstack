@@ -31,10 +31,7 @@ const Change = (props: Props) => {
               <label htmlFor="account">NEW PASSWORD</label>
               <b> *******</b>
             </div>
-            <button>
-              Submit
-            </button>
-
+            <button>Submit</button>
           </form>
         </div>
       </div>
