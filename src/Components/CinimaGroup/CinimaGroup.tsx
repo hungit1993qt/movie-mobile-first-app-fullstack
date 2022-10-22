@@ -4,12 +4,17 @@ import PopupListMovie from "Components/CinimaGroup/ListMovie";
 import { useSelector } from "react-redux";
 import { RootState } from "configStore";
 import { Cinema } from "Interface/Cinema";
+import PageLoading from "Components/PageLoading/PageLoading";
 
 function CinimaGroup() {
   const [showPopupListMovie, setShowPopupListMovie] = useState(false);
   const [dataCinema, setDataCinema] = useState<Cinema>();
-  const { cinemaBrand } = useSelector((state: RootState) => state.movie);
-
+  const { cinemaBrand, isLoading } = useSelector(
+    (state: RootState) => state.movie
+  );
+  if (isLoading) {
+    return <PageLoading />;
+  }
   return (
     <section className={styles["CinimaGroup"]}>
       <PopupListMovie

@@ -4,10 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "configStore";
 import { Movie } from "Interface/movie";
+import PageLoading from "Components/PageLoading/PageLoading";
 const NewMovie = () => {
   const navigate = useNavigate();
 
-  const { movies } = useSelector((state: RootState) => state.movie);
+  const { movies, isLoading } = useSelector((state: RootState) => state.movie);
+  if (isLoading) {
+    return <PageLoading />;
+  }
   return (
     <section className={styles["NewsMovie"]}>
       <div className={styles["gr-box"]}>

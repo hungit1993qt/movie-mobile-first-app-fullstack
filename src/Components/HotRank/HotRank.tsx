@@ -4,9 +4,13 @@ import { useSelector } from "react-redux";
 import { RootState } from "configStore";
 import { Movie } from "Interface/movie";
 import { useNavigate } from "react-router-dom";
+import PageLoading from "Components/PageLoading/PageLoading";
 const HotRank = () => {
-  const { movies } = useSelector((state: RootState) => state.movie);
+  const { movies, isLoading } = useSelector((state: RootState) => state.movie);
   const navigate = useNavigate();
+  if (isLoading) {
+    return <PageLoading />;
+  }
   return (
     <section className={styles["NewsMovie"]}>
       <div className={styles["NewsMovie-Content"]}>

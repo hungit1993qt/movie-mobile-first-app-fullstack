@@ -7,6 +7,7 @@ import { getAllMovie, getMovieDetails } from "Slices/movie";
 import Recomand from "./Recomand";
 import Trainler from "./Trainler";
 import { Movie } from "Interface/movie";
+import PageLoading from "Components/PageLoading/PageLoading";
 // import { useNavigate } from "react-router-dom";
 const DetailMovie = () => {
   // const navigate = useNavigate();
@@ -18,10 +19,12 @@ const DetailMovie = () => {
     dispatch(getMovieDetails(slugMovie!));
     dispatch(getAllMovie());
   }, [slugMovie]);
-  const { detailMovie, movies } = useSelector(
+  const { detailMovie, movies, isLoading } = useSelector(
     (state: RootState) => state.movie
   );
-
+  if (isLoading) {
+    return <PageLoading />;
+  }
   return (
     <div className={styles["detail-movie"]}>
       <Trainler
