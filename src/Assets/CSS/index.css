@@ -48,11 +48,11 @@ section {
   display: flex !important;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .style-module_tooltip__tKc3i {
   margin-left: 0px !important;
-  width: 50px;
+  width: 80px;
   text-align: center;
   background-color: transparent !important;
   color: rgb(255, 188, 11) !important;
