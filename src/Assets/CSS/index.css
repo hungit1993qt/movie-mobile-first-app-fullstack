@@ -52,6 +52,11 @@ section {
 }
 .style-module_tooltip__tKc3i {
   margin-left: 0px !important;
+  width: 50px;
+  text-align: center;
+  background-color: transparent !important;
+  color: rgb(255, 188, 11) !important;
+  font-weight: bold;
 }
 ::-webkit-scrollbar {
   width: 0px;
