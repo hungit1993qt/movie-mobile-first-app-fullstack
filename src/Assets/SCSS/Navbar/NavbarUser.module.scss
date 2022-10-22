@@ -12,10 +12,11 @@
   transform: translate(100%);
   transition: ease-in 0.2s;
   overflow: hidden;
+ 
   .popup-inner {
     position: relative;
     //padding: 32px;
-    width: 60%;
+    width: 50%;
     background-color: #242c3b;
     height: 100%;
     display: flex;

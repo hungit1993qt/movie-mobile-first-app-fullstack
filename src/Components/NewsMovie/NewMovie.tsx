@@ -6,24 +6,41 @@ import { RootState } from "configStore";
 import { Movie } from "Interface/movie";
 import PageLoading from "Components/PageLoading/PageLoading";
 import { FreeMode } from "swiper";
+import { useState } from "react";
 const NewMovie = () => {
+  const [showByType, setShowByType] = useState("");
   const navigate = useNavigate();
-
   const { movies, isLoading } = useSelector((state: RootState) => state.movie);
   if (isLoading) {
     return <PageLoading />;
   }
+
   return (
     <section className={styles["NewsMovie"]}>
       <div className={styles["gr-box"]}>
         <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>action</button>
+          <button
+            onClick={() => setShowByType("action")}
+            className={styles["btn-NewsMovie"]}
+          >
+            action
+          </button>
         </div>
         <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>horror</button>
+          <button
+            onClick={() => setShowByType("horror")}
+            className={styles["btn-NewsMovie"]}
+          >
+            horror
+          </button>
         </div>
         <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>Cartoon</button>
+          <button
+            onClick={() => setShowByType("cartoon")}
+            className={styles["btn-NewsMovie"]}
+          >
+            cartoon
+          </button>
         </div>
       </div>
       <div className={styles["NewsMovie-Content"]}>
@@ -36,19 +53,24 @@ const NewMovie = () => {
           className="mySwiper"
         >
           {movies?.map((hotMovie: Movie, index) => {
-            return (
-              <SwiperSlide
-                onClick={() => navigate(`/detail/${hotMovie.slugMovie}`)}
-                key={index}
-                className={styles["SwiperSlide"]}
-              >
-                <img
-                  className={styles["Img-NewsMovie"]}
-                  src={`${hotMovie.thumbnailMovie}`}
-                  alt={hotMovie.slugMovie}
-                />
-              </SwiperSlide>
-            );
+            if (
+              showByType
+                ? hotMovie.categoryMovie == showByType
+                : hotMovie.categoryMovie
+            )
+              return (
+                <SwiperSlide
+                  onClick={() => navigate(`/detail/${hotMovie.slugMovie}`)}
+                  key={index}
+                  className={styles["SwiperSlide"]}
+                >
+                  <img
+                    className={styles["Img-NewsMovie"]}
+                    src={`${hotMovie.thumbnailMovie}`}
+                    alt={hotMovie.slugMovie}
+                  />
+                </SwiperSlide>
+              );
           })}
         </Swiper>
       </div>

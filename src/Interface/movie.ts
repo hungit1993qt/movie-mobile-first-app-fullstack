@@ -12,4 +12,5 @@ export interface Movie {
   review: [];
   pictureMovie: string;
   thumbnailMovie: string;
+  categoryMovie: string;
 }

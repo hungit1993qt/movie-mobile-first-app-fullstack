@@ -55,7 +55,13 @@ const NavbarFooter = () => {
             : stylesuser["navbar-user"]
         }
       >
-        <div className={stylesuser["popup-inner"]}>
+        <div
+          className={
+            showNavbarUser
+              ? `${stylesuser["popup-inner"]} ${stylesuser["show-navbar"]}`
+              : stylesuser["popup-inner"]
+          }
+        >
           <div className={stylesuser["info-user"]}>
             <img src="images/avatar.jpg" alt="" />
             <div className={stylesuser["info"]}>
