@@ -80,14 +80,22 @@ const DetailMovie = () => {
       </div>
       <div className={styles["list-comment"]}>
         {detailMovie?.review.map((reviews: Reviews, index) => {
-   
           return (
             <div key={index} className={styles["comment"]}>
-              <img src={`${reviews.user.avatar}`} alt="" />
+              <div className={styles["gr-img"]}>
+                <img src={`${reviews.user.avatar}`} alt="" />
+                <i className="fa fa-star">
+                  <span className={styles["ranks"]}>{reviews.rankReview}</span>
+                </i>
+              </div>
+
               <span className={styles["comment-content"]}>
                 {reviews.contentReview}
 
-                <i>{reviews.user.nameUser} at {Moment(reviews.createdAt).format("hh:mm a, DD-MM-YYYY")}</i>
+                <i>
+                  {reviews.user.nameUser} at{" "}
+                  {Moment(reviews.createdAt).format("hh:mm a, DD-MM-YYYY")}
+                </i>
               </span>
             </div>
           );
