@@ -21,14 +21,14 @@
       position: absolute;
       top: 5px;
       right: 0;
-    
+
       background-color: transparent;
-      border: none;      
+      border: none;
       i {
         font-size: 1.5rem;
-         color: #ff512f;
-         margin: 0;
-       }
+        color: #ff512f;
+        margin: 0;
+      }
     }
     .Information {
       display: flex;
@@ -69,9 +69,10 @@
             font-size: 1rem;
             opacity: 0.8;
           }
-          input,textarea  {
+          input,
+          textarea {
             font-weight: 500;
-            font-size: 14px;            
+            font-size: 14px;
             margin-top: 1rem;
             background-color: #242c3b;
             width: 100%;
@@ -80,6 +81,7 @@
             color: var(--title);
             &:focus {
               font-size: 1rem;
+              border: none;
             }
             i {
               color: var(--title);
@@ -99,7 +101,7 @@
               border: solid 1px var(--title);
               padding: 1rem;
               line-height: 1.2rem;
-              font-weight:lighter;
+              font-weight: lighter;
               opacity: 0.8;
             }
           }
