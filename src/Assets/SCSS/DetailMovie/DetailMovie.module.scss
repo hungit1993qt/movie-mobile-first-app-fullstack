@@ -85,9 +85,18 @@
       font-size: 0.9rem;
       display: flex;
       justify-content: center;
+      align-items: center;
 
+      button {
+        border-radius: 5px;
+        padding: 10px;
+        margin-left: 5px;
+        background: #ff512f;
+        color: #242c3b;
+        font-weight: bold;
+      }
       input {
-        width: 90%;
+        width: 78%;
         padding: 10px;
         &:focus {
           font-size: 1rem;

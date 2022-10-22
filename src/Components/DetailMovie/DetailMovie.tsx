@@ -71,6 +71,7 @@ const DetailMovie = () => {
         <span className={styles["title"]}>Comment</span>
         <span className={styles["description"]}>
           <input type="text" placeholder="Submit your comment..." />
+          <button>Sent</button>
         </span>
       </div>
       <div className={styles["list-comment"]}>
