@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper";
+import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import { useSelector } from "react-redux";
 import { RootState } from "configStore";
 import { Movie } from "Interface/movie";
@@ -19,7 +19,8 @@ const Carousel = () => {
     <section className={styles["Carousel"]}>
       <Swiper
         autoplay={{
-          delay: 5000,
+          delay: 2500,
+          disableOnInteraction: false,
         }}
         effect={"coverflow"}
         grabCursor={true}
@@ -34,7 +35,7 @@ const Carousel = () => {
           slideShadows: true,
         }}
         pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[Autoplay, EffectCoverflow, Pagination]}
         className="mySwiper"
       >
         {movies?.map((listMovie: Movie, index) => {
