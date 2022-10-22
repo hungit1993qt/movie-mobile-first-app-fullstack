@@ -21,8 +21,8 @@
           .tab-label {
             position: relative;
             display: block;
-            line-height: 2.75em;
-            padding: 1rem;
+            margin-bottom: 0.125rem;
+            padding: 0.8rem;
 
             img {
               width: 100%;
@@ -38,12 +38,11 @@
           }
           &:nth-child(1) {
             .tab-label {
-             
             }
             .tab-content {
               display: block;
               opacity: 1;
-              border-bottom: 0.125rem solid #16a085;
+
               width: 100%;
             }
           }
@@ -54,14 +53,13 @@
             left: 0;
             opacity: 0;
             display: none;
-
+            padding-bottom: 90px;
             .cinima-location {
               text-align: center;
               background-color: var(--title);
-              padding: 5px 2px;
-              margin: 10px 0;
               border-radius: 7px;
               width: 100%;
+              margin-bottom: 5px;
               cursor: pointer;
               p {
                 font-weight: bold;
@@ -77,10 +75,6 @@
                 text-overflow: ellipsis;
                 white-space: normal;
                 -webkit-line-clamp: 1;
-                
-              }
-              &:last-child {
-                margin-bottom: 85px;
               }
             }
           }
@@ -89,7 +83,7 @@
 
       .tab-switch:checked + .tab-label {
         border-bottom: 0.125rem solid #16a085;
-
+        margin-bottom: 0;
         z-index: 1;
       }
       .tab-switch:checked + label + .tab-content {
