@@ -11,4 +11,6 @@ export interface Reviews {
     isAdmin: boolean;
     avatar: string;
   };
+  createdAt: string;
+  updatedAt: Date;
 }

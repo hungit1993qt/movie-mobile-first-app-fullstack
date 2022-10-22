@@ -10,6 +10,7 @@ import { Movie } from "Interface/movie";
 import PageLoading from "Components/PageLoading/PageLoading";
 import { Reviews } from "Interface/Reviews";
 import { User } from "Interface/User";
+import Moment from "moment";
 // import { useNavigate } from "react-router-dom";
 const DetailMovie = () => {
   // const navigate = useNavigate();
@@ -27,7 +28,7 @@ const DetailMovie = () => {
   if (isLoading) {
     return <PageLoading />;
   }
-
+  Moment.locale("en");
   return (
     <div className={styles["detail-movie"]}>
       <Trainler
@@ -79,12 +80,14 @@ const DetailMovie = () => {
       </div>
       <div className={styles["list-comment"]}>
         {detailMovie?.review.map((reviews: Reviews, index) => {
-          console.log(reviews);
+   
           return (
             <div key={index} className={styles["comment"]}>
               <img src={`${reviews.user.avatar}`} alt="" />
               <span className={styles["comment-content"]}>
                 {reviews.contentReview}
+
+                <i>{reviews.user.nameUser} at {Moment(reviews.createdAt).format("hh:mm a, DD-MM-YYYY")}</i>
               </span>
             </div>
           );
