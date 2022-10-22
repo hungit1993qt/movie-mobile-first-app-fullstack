@@ -89,6 +89,9 @@
       input {
         width: 90%;
         padding: 10px;
+        &:focus {
+          font-size: 1rem;
+        }
       }
     }
   }
@@ -114,7 +117,7 @@
       }
       &:nth-child(2n + 1) {
         flex-direction: row-reverse;
-        text-align:justify;
+        text-align: justify;
       }
       .comment-content {
         font-weight: 200;
