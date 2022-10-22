@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "configStore";
 import { Movie } from "Interface/movie";
 import PageLoading from "Components/PageLoading/PageLoading";
+import { FreeMode } from "swiper";
 const NewMovie = () => {
   const navigate = useNavigate();
 
@@ -28,24 +29,23 @@ const NewMovie = () => {
       <div className={styles["NewsMovie-Content"]}>
         <h1 className={styles["title"]}>news movie</h1>
         <Swiper
-          slidesPerView={2}
-          spaceBetween={20}
-          pagination={{
-            clickable: true,
-          }}
+          freeMode={true}
+          slidesPerView={2.5}
+          spaceBetween={15}
+          modules={[FreeMode]}
           className="mySwiper"
         >
-          {movies?.map((newMovie: Movie, index) => {
+          {movies?.map((hotMovie: Movie, index) => {
             return (
               <SwiperSlide
-                onClick={() => navigate(`/detail/${newMovie.slugMovie}`)}
+                onClick={() => navigate(`/detail/${hotMovie.slugMovie}`)}
                 key={index}
                 className={styles["SwiperSlide"]}
               >
                 <img
                   className={styles["Img-NewsMovie"]}
-                  src={`${newMovie.thumbnailMovie}`}
-                  alt={newMovie.slugMovie}
+                  src={`${hotMovie.thumbnailMovie}`}
+                  alt={hotMovie.slugMovie}
                 />
               </SwiperSlide>
             );
