@@ -3,10 +3,10 @@ import store from "configStore";
 
 // Setup cấu hình mặc định cho axios
 const axiosClient = axios.create({
-  baseURL: "https://movienew.cybersoft.edu.vn/api",
+  baseURL: "https://hungit1993qt-movie-be.herokuapp.com/",
   headers: {
-    TokenCybersoft:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJGcm9udCBFbmQgNzEiLCJIZXRIYW5TdHJpbmciOiIxMS8xMi8yMDIyIiwiSGV0SGFuVGltZSI6IjE2NzA3MTY4MDAwMDAiLCJuYmYiOjE2NDU5ODEyMDAsImV4cCI6MTY3MDg2NDQwMH0.hImF3FD5ezlSpmo_fyOBeTlwLGcUfxyEeZIRIddaRFE",
+    token:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzNhZDQ3ZjA4YWI1MGIzMGNhM2EwMSIsImFkbWluIjpmYWxzZSwiaWF0IjoxNj3342Y0MzUyOTgf4LCJlegHAiOjE2Nj312312Y5NDQ5ODh9.3uw9T_ew9cmoMTYbixwMQFS8jPK74Ct8vPQVRBVLv_kds4324g",
   },
 });
 
@@ -19,7 +19,7 @@ axiosClient.interceptors.request.use((config) => {
   // config là nội dung của request
   // ta có thể thay đổi nội dung của request trước khi nó được gửi lên server
   if (config.headers) {
-    const { accessToken = "" } = (store.getState().auth.user as any) || {};
+    const { accessToken = "" } = (store.getState().auth as any) || {};
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
@@ -33,7 +33,7 @@ axiosClient.interceptors.response.use(
   (reponse) => {
     // request thành công
     // thay đổi format của reponse trước khi trả ra cho nơi gọi request
-    return reponse.data.content;
+    return reponse.data;
   },
   (error: AxiosError<{ content: string }>) => {
     // request thất bại

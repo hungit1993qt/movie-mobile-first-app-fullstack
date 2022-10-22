@@ -36,12 +36,24 @@
             &:hover {
             }
           }
+          &:nth-child(1) {
+            .tab-label {
+             
+            }
+            .tab-content {
+              display: block;
+              opacity: 1;
+              border-bottom: 0.125rem solid #16a085;
+              width: 100%;
+            }
+          }
           .tab-content {
             height: auto;
             position: absolute;
             z-index: 1;
             left: 0;
             opacity: 0;
+            display: none;
 
             .cinima-location {
               line-height: 1rem;
@@ -59,8 +71,16 @@
               span {
                 opacity: 0.9;
                 font-size: 11px;
+                display: -webkit-box;
+                max-height: 3.2rem;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: normal;
+                -webkit-line-clamp: 1;
+                line-height: 1.6rem;
               }
-              &:last-child{
+              &:last-child {
                 margin-bottom: 85px;
               }
             }
@@ -77,6 +97,7 @@
         z-index: 2;
         opacity: 1;
         width: 100%;
+        display: block;
       }
     }
   }

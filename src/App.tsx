@@ -4,7 +4,7 @@ import ErrorBoundary from "Components/ErrorBoundary/ErrorBoundary";
 import HomeTemplate from "./Templates/HomeTemplate";
 import ProtectedRoute from "Routes/ProtectedRoute";
 import PageLoading from "Components/PageLoading/PageLoading";
-
+import 'sweetalert2/src/sweetalert2.scss'
 const HomePage = lazy(() => import("Pages/HomePage/HomePage"));
 const ListCheckout = lazy(() => import("Components/ListCheckout/ListCheckout"));
 const SearchNavbar = lazy(() => import("Components/SearchNavbar/SearchNavbar"));
@@ -21,7 +21,7 @@ function App() {
           <Routes>
             <Route path="" element={<HomeTemplate />}>
               <Route path="/search" element={<SearchNavbar />} />
-              <Route path="/detail" element={<DetailMovie />} />
+              <Route path="/detail/:key" element={<DetailMovie />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route

@@ -40,11 +40,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 10px 0 5px 0;
+        padding: 10px 10px 5px 10px;
         border-radius: 7px 7px 0 0;
         border-bottom: 1px solid var(--title);
         color: var(--title);
         line-height: 1.3rem;
+        box-sizing: border-box;
 
         .name-cinima {
           font-size: 1rem;
@@ -54,6 +55,14 @@
           font-size: 12px;
           font-weight: 400;
           opacity: 0.8;
+          display: -webkit-box;
+          max-height: 3.2rem;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal;
+          -webkit-line-clamp: 1;
+          line-height: 1.6rem;
         }
       }
       .list-movies {
@@ -70,8 +79,7 @@
           margin: 1rem 0 1rem 1rem;
           line-height: 1.2rem;
           img {
-            height: 70px;
-            width: 120px;
+            height: 100%;
           }
           .movie-content {
             display: flex;
@@ -79,9 +87,11 @@
             justify-content: center;
             align-items: left;
             margin-left: 10px;
+            width: 80%;
             .movie-name {
               color: var(--title);
               font-size: 18px;
+              margin-bottom: 6px;
             }
             .movie-description {
               color: var(--title);

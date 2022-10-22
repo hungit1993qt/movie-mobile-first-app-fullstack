@@ -1,8 +1,13 @@
 import styles from "Assets/SCSS/NewsMovie/NewsMovie.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "configStore";
+import { Movie } from "Interface/movie";
 const NewMovie = () => {
   const navigate = useNavigate();
+
+  const { movies } = useSelector((state: RootState) => state.movie);
   return (
     <section className={styles["NewsMovie"]}>
       <div className={styles["gr-box"]}>
@@ -19,42 +24,28 @@ const NewMovie = () => {
       <div className={styles["NewsMovie-Content"]}>
         <h1 className={styles["title"]}>news movie</h1>
         <Swiper
-          slidesPerView={3}
-          spaceBetween={12}
+          slidesPerView={2}
+          spaceBetween={20}
           pagination={{
             clickable: true,
           }}
           className="mySwiper"
         >
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-            onClick={()=>navigate("/detail")}
-              className={styles["Img-NewsMovie"]}
-              src="images/p4.jpg"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p5.jpg"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p6.jpg"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p7.jpg"
-              alt=""
-            />
-          </SwiperSlide>
+          {movies?.map((newMovie: Movie, index) => {
+            return (
+              <SwiperSlide
+                onClick={() => navigate(`/detail/${newMovie.slugMovie}`)}
+                key={index}
+                className={styles["SwiperSlide"]}
+              >
+                <img
+                  className={styles["Img-NewsMovie"]}
+                  src={`${newMovie.thumbnailMovie}`}
+                  alt={newMovie.slugMovie}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>

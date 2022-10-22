@@ -4,9 +4,19 @@ import { useNavigate } from "react-router-dom";
 type Props = {
   trigger: boolean;
   setTrigger: any;
+  dataTrainler: string;
+};
+const convertURL = (str: string) => {
+  return str.slice(str.indexOf("e/") + 2);
 };
 
 const Trainler = (props: Props) => {
+  const { dataTrainler } = props;
+  let URL = dataTrainler;
+  if (dataTrainler) {
+    URL = convertURL(URL);
+  }
+
   const navigate = useNavigate();
   return props.trigger ? (
     <div className={styles["popup-list-movie"]}>
@@ -21,7 +31,7 @@ const Trainler = (props: Props) => {
           <iframe
             width={788}
             height={443}
-            src="https://www.youtube.com/embed/Z1BCujX3pw8"
+            src={`https://www.youtube.com/embed/${URL}`}
             title="Marvel Studios' Captain Marvel - Official Trailer"
             frameBorder={0}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

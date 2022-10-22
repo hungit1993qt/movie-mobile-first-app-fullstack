@@ -4,11 +4,23 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper";
+import { useSelector } from "react-redux";
+import { RootState } from "configStore";
+import { Movie } from "Interface/movie";
 
 const Carousel = () => {
+  // const dispatch = useDispatch<AppDispatch>();
+  // useEffect(() => {
+  //   dispatch(getAllMovie());
+  // }, []);
+  const { movies } = useSelector((state: RootState) => state.movie);
+
   return (
     <section className={styles["Carousel"]}>
       <Swiper
+        autoplay={{
+          delay: 5000,
+        }}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -25,17 +37,15 @@ const Carousel = () => {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide className={styles["swiper-slide"]}>
-          <img src="/images/p2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide
-          className={`${styles["swiper-slide"]} swiper-slide-active`}
-        >
-          <img src="/images/p1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide className={styles["swiper-slide"]}>
-          <img src="/images/p3.jpg" />
-        </SwiperSlide>
+        {movies?.map((listMovie: Movie, index) => {
+          if (listMovie.comingMovie) {
+            return (
+              <SwiperSlide key={index} className={styles["swiper-slide"]}>
+                <img src={`${listMovie.pictureMovie}`} alt="" />
+              </SwiperSlide>
+            );
+          }
+        })}
       </Swiper>
     </section>
   );

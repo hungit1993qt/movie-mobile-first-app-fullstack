@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import styles from "Assets/SCSS/CinimaGroup/ListMovie.module.scss";
 import PopupShowTime from "Components/CinimaGroup/ListShowTime";
+import { Cinema } from "Interface/Cinema";
+import { Movie } from "Interface/movie";
 type Props = {
   trigger: boolean;
   setTrigger: any;
-  dataMovie: [
-    {
-      title: string;
-      address: string;
-    }
-  ];
+  dataCinema: Cinema;
 };
 
 const ListMovie = (props: Props) => {
   const [showPopupTime, setShowPopupTime] = useState(false);
+  const { trigger, setTrigger, dataCinema } = props;
+
   return props.trigger ? (
     <div className={styles["popup-list-movie"]}>
       <PopupShowTime trigger={showPopupTime} setTrigger={setShowPopupTime} />
@@ -27,91 +26,39 @@ const ListMovie = (props: Props) => {
         <div className={styles["list-content"]}>
           <div className={styles["info-cinima"]}>
             <span className={styles["name-cinima"]}>
-              CGV - Vincom - Đà Nẵng
+              {dataCinema.nameCinema}
             </span>
             <span className={styles["address-cinima"]}>
-              Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị
+              {dataCinema.addressCinema}
             </span>
           </div>
           <div className={styles["list-movies"]}>
-            <div
-              onClick={() => setShowPopupTime(true)}
-              className={styles["movie-items"]}
-            >
-              <img src="images/p1.jpg" alt=" " />
-              <div className={styles["movie-content"]}>
-                <span className={styles["movie-name"]}>The War 2 Monter </span>
-                <span className={styles["movie-description"]}>
-                  6* &rsaquo; 1h 44m
-                </span>
-                <span className={styles["movie-description"]}>06-10-2022</span>
-              </div>
-            </div>
-            <div
-              onClick={() => setShowPopupTime(true)}
-              className={styles["movie-items"]}
-            >
-              <img src="images/p2.jpg" alt=" " />
-              <div className={styles["movie-content"]}>
-                <span className={styles["movie-name"]}>The War 2 Monter </span>
-                <span className={styles["movie-description"]}>
-                  6* &rsaquo; 1h 44m
-                </span>
-                <span className={styles["movie-description"]}>06-10-2022</span>
-              </div>
-            </div>
-            <div
-              onClick={() => setShowPopupTime(true)}
-              className={styles["movie-items"]}
-            >
-              <img src="images/p3.jpg" alt=" " />
-              <div className={styles["movie-content"]}>
-                <span className={styles["movie-name"]}>A House is perfect</span>
-                <span className={styles["movie-description"]}>
-                  6* &rsaquo; 1h 44m
-                </span>
-                <span className={styles["movie-description"]}>06-10-2022</span>
-              </div>
-            </div>
-            <div
-              onClick={() => setShowPopupTime(true)}
-              className={styles["movie-items"]}
-            >
-              <img src="images/p1.jpg" alt=" " />
-              <div className={styles["movie-content"]}>
-                <span className={styles["movie-name"]}>The War 2 Monter </span>
-                <span className={styles["movie-description"]}>
-                  6* &rsaquo; 1h 44m
-                </span>
-                <span className={styles["movie-description"]}>06-10-2022</span>
-              </div>
-            </div>
-            <div
-              onClick={() => setShowPopupTime(true)}
-              className={styles["movie-items"]}
-            >
-              <img src="images/p2.jpg" alt=" " />
-              <div className={styles["movie-content"]}>
-                <span className={styles["movie-name"]}>The War 2 Monter </span>
-                <span className={styles["movie-description"]}>
-                  6* &rsaquo; 1h 44m
-                </span>
-                <span className={styles["movie-description"]}>06-10-2022</span>
-              </div>
-            </div>
-            <div
-              onClick={() => setShowPopupTime(true)}
-              className={styles["movie-items"]}
-            >
-              <img src="images/p3.jpg" alt=" " />
-              <div className={styles["movie-content"]}>
-                <span className={styles["movie-name"]}>A House is perfect</span>
-                <span className={styles["movie-description"]}>
-                  6* &rsaquo; 1h 44m
-                </span>
-                <span className={styles["movie-description"]}>06-10-2022</span>
-              </div>
-            </div>
+            {dataCinema.movies.map((listMovie: Movie, index: number) => {
+              console.log(listMovie);
+              return (
+                <div
+                  onClick={() => setShowPopupTime(true)}
+                  className={styles["movie-items"]}
+                  key={index}
+                >
+                  <img
+                    src={`${listMovie.pictureMovie}`}
+                    alt={listMovie.nameMovie}
+                  />
+                  <div className={styles["movie-content"]}>
+                    <span className={styles["movie-name"]}>
+                      {listMovie.nameMovie}
+                    </span>
+                    <span className={styles["movie-description"]}>
+                      {listMovie.slugMovie}
+                    </span>
+                    <span className={styles["movie-description"]}>
+                      {listMovie.description}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,6 +1,13 @@
 import styles from "Assets/SCSS/Recomand/Recomand.module.scss";
+import { Movie } from "Interface/movie";
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-const Recomand = () => {
+type Props = {
+  data: Movie[];
+};
+const Recomand = (props: Props) => {
+  const { data } = props;
+  const navigate = useNavigate();
   return (
     <section className={styles["NewsMovie"]}>
       <div className={styles["NewsMovie-Content"]}>
@@ -13,34 +20,18 @@ const Recomand = () => {
           }}
           className={styles["mySwiper"]}
         >
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p8.jpg"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p9.jpg"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p7.jpg"
-              alt=""
-            />
-          </SwiperSlide>
-          <SwiperSlide className={styles["SwiperSlide"]}>
-            <img
-              className={styles["Img-NewsMovie"]}
-              src="images/p4.jpg"
-              alt=""
-            />
-          </SwiperSlide>
+          {data?.map((movieR: Movie, index) => {
+            return (
+              <SwiperSlide key={index} className={styles["SwiperSlide"]}>
+                <img
+                  onClick={() => navigate(`/detail/${movieR.slugMovie}`)}
+                  className={styles["Img-NewsMovie"]}
+                  src={`${movieR.thumbnailMovie}`}
+                  alt={movieR.nameMovie}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>

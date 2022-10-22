@@ -1,17 +1,37 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "Assets/SCSS/DetailMovie/DetailMovie.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "configStore";
+import { useParams } from "react-router-dom";
+import { getAllMovie, getMovieDetails } from "Slices/movie";
 import Recomand from "./Recomand";
 import Trainler from "./Trainler";
+import { Movie } from "Interface/movie";
 // import { useNavigate } from "react-router-dom";
 const DetailMovie = () => {
   // const navigate = useNavigate();
   const [showPopupTrainler, setShowPopupTrainler] = useState(false);
+  const params = useParams();
+  const slugMovie = params.key;
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(() => {
+    dispatch(getMovieDetails(slugMovie!));
+    dispatch(getAllMovie());
+  }, [slugMovie]);
+  const { detailMovie, movies } = useSelector(
+    (state: RootState) => state.movie
+  );
+
   return (
     <div className={styles["detail-movie"]}>
-      <Trainler trigger={showPopupTrainler} setTrigger={setShowPopupTrainler} />
+      <Trainler
+        trigger={showPopupTrainler}
+        dataTrainler={detailMovie?.trainlerMovie as string}
+        setTrigger={setShowPopupTrainler}
+      />
       <div className={styles["detail"]}>
         <div className={styles["img-detail"]}>
-          <img src="images/detail.webp" alt="" />
+          <img src={detailMovie?.pictureMovie} alt={detailMovie?.nameMovie} />
         </div>
         <div className={styles["group-btn"]}>
           <div
@@ -26,17 +46,13 @@ const DetailMovie = () => {
         </div>
         <div className={styles["content-detail"]}>
           <span className={styles["title"]}>
-            2021 - 1h 30m - War, Family, Comedy, Fantasy, Animation,... HD -
-            Vision - 5.1
+            {/* 2021 - 1h 30m - War, Family, Comedy, Fantasy, Animation,... HD -
+            Vision - 5.1 */}
+            {detailMovie?.nameMovie}
           </span>
 
           <span className={styles["description"]}>
-            Sixteen bowlers are picked by the captains, forming four teams of
-            five bowlers, including the captains In the mounted arms a captain
-            (three, or braids) in charge of an is thus, Wakanda. Introducing
-            Tenoch Huerta as Namor, king of a hidden undersea nation, the film
-            also stars Dominique Thorne, Michaela Coel, Mabel Cadena and Alex
-            Livanalli.
+            {detailMovie?.description}
           </span>
         </div>
         <div className={styles["cast-detail"]}>
@@ -104,7 +120,7 @@ const DetailMovie = () => {
           </span>
         </div>
       </div>
-      <Recomand />
+      <Recomand data={movies as Movie[]} />
     </div>
   );
 };

@@ -1,107 +1,65 @@
 import styles from "Assets/SCSS/CinimaGroup/CinimaGroup.module.scss";
 import { useState } from "react";
-import PopupListMove from "Components/CinimaGroup/ListMovie";
+import PopupListMovie from "Components/CinimaGroup/ListMovie";
+import { useSelector } from "react-redux";
+import { RootState } from "configStore";
+import { Cinema } from "Interface/Cinema";
 
-import PopupListSeat from "Components/CinimaGroup/ListSeat";
-const dataMovie: any = [
-  {
-    title: "CGV - Vincom - Đà Nẵng",
-    adress: "Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị",
-  },
-  {
-    title: "CGV - Vincom - Đà Nẵng",
-    adress: "Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị",
-  },
-];
 function CinimaGroup() {
   const [showPopupListMovie, setShowPopupListMovie] = useState(false);
- 
- 
+  const [dataCinema, setDataCinema] = useState<Cinema>();
+  const { cinemaBrand } = useSelector((state: RootState) => state.movie);
 
   return (
     <section className={styles["CinimaGroup"]}>
-      <PopupListMove
+      <PopupListMovie
         trigger={showPopupListMovie}
         setTrigger={setShowPopupListMovie}
-        dataMovie={dataMovie}
+        dataCinema={dataCinema as Cinema}
       />
-      
-      
-  
-      
+
       <div className={styles["CinimaGroup-Content"]}>
-        <h1 className={styles["title"]}>hot rank</h1>
+        <h1 className={styles["title"]}>list brand cinema</h1>
         <div className={styles["Content"]}>
           <div className={styles["tabs"]}>
-            <div className={styles["tab"]}>
-              <input
-                type="radio"
-                name="css-tabs"
-                id="tab-1"
-                defaultChecked
-                className={styles["tab-switch"]}
-              />
-              <label htmlFor="tab-1" className={styles["tab-label"]}>
-                <img src="images/b1.jpg" alt="" />
-              </label>
-              <div className={styles["tab-content"]}>
-                <div
-                  onClick={() => setShowPopupListMovie(true)}
-                  className={styles["cinima-location"]}
-                >
-                  <p>CGV - Vincom - Đà Nẵng</p>
-                  <span>Tầng 1, TTTM Vincom Center B - Lê Thanh Nghị </span>
+            {cinemaBrand?.map((cinemaBrand, index) => {
+              return (
+                <div className={styles["tab"]} key={index}>
+                  <input
+                    type="radio"
+                    name="css-tabs"
+                    id={`tab-${index + 1}`}
+                    className={styles["tab-switch"]}
+                  />
+                  <label
+                    htmlFor={`tab-${index + 1}`}
+                    className={styles["tab-label"]}
+                  >
+                    <img
+                      src={`${cinemaBrand.logoCinemaBrand}`}
+                      alt={cinemaBrand.nameCinemaBrand}
+                    />
+                  </label>
+                  <div className={styles["tab-content"]}>
+                    {cinemaBrand.cinemas.map((cinema: Cinema, index) => {
+                      return (
+                        <div
+                          onClick={() => {
+                            setShowPopupListMovie(true);
+                            setDataCinema(cinema as Cinema);
+                          }}
+                          className={styles["cinima-location"]}
+                          key={index}
+                        >
+                          <p>{cinema.nameCinema}</p>
+                          <span>{cinema.addressCinema}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className={styles["cinima-location"]}>
-                  <p>CGV - Vincom - Quảng Trị</p>
-                  <span>Tầng 1, TTTM Vincom Center B - Hùng Vương </span>
-                </div>
-                <div className={styles["cinima-location"]}>
-                  <p>CGV - Vincom - HCM</p>
-                  <span>Tầng 1, TTTM Vincom Center B - Nguyễn Hữu Thọ </span>
-                </div>
-                <div className={styles["cinima-location"]}>
-                  <p>CGV - Vincom - Hà Nội</p>
-                  <span>Tầng 1, TTTM Vincom Center B - Nguyễn Xiển </span>
-                </div>
-              </div>
-            </div>
-            <div className={styles["tab"]}>
-              <input
-                type="radio"
-                name="css-tabs"
-                id="tab-2"
-                className={styles["tab-switch"]}
-              />
-              <label htmlFor="tab-2" className={styles["tab-label"]}>
-                <img src="images/b2.png" alt="" />
-              </label>
-              <div className={styles["tab-content"]}>2</div>
-            </div>
-            <div className={styles["tab"]}>
-              <input
-                type="radio"
-                name="css-tabs"
-                id="tab-3"
-                className={styles["tab-switch"]}
-              />
-              <label htmlFor="tab-3" className={styles["tab-label"]}>
-                <img src="images/b3.png" alt="" />
-              </label>
-              <div className={styles["tab-content"]}>3</div>
-            </div>
-            <div className={styles["tab"]}>
-              <input
-                type="radio"
-                name="css-tabs"
-                id="tab-4"
-                className={styles["tab-switch"]}
-              />
-              <label htmlFor="tab-4" className={styles["tab-label"]}>
-                <img src="images/b4.png" alt="" />
-              </label>
-              <div className={styles["tab-content"]}>4</div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </div>

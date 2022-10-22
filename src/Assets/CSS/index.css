@@ -69,4 +69,7 @@ section {
   .fisrt-mobile img {
     width: 100%;
   }
+  .navbar-footer {
+    display: none;
+  }
 }
