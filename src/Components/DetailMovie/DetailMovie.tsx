@@ -10,13 +10,24 @@ import { Movie } from "Interface/movie";
 import PageLoading from "Components/PageLoading/PageLoading";
 import { Reviews } from "Interface/Reviews";
 import { User } from "Interface/User";
+import { Rating } from "react-simple-star-rating";
 import Moment from "moment";
+
 // import { useNavigate } from "react-router-dom";
 const DetailMovie = () => {
   // const navigate = useNavigate();
   const [showPopupTrainler, setShowPopupTrainler] = useState(false);
   const params = useParams();
   const slugMovie = params.key;
+  const [rating, setRating] = useState(0);
+  const handleRating = (rate: number) => {
+    setRating(rate);
+
+    // other logic
+  };
+  const onPointerMove = (value: number, index: number) =>
+    console.log(value, index);
+
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     dispatch(getMovieDetails(slugMovie!));
@@ -77,6 +88,14 @@ const DetailMovie = () => {
           <input type="text" placeholder="Submit your comment..." />
           <button>Sent</button>
         </span>
+        <Rating
+          onClick={handleRating}
+          onPointerMove={onPointerMove}
+          /* Available Props */
+          showTooltip
+          tooltipArray={["Terrible", "Bad", "Average", "Great", "Prefect"]}
+          className={styles["rating-star"]}
+        />
       </div>
       <div className={styles["list-comment"]}>
         {detailMovie?.review.map((reviews: Reviews, index) => {
