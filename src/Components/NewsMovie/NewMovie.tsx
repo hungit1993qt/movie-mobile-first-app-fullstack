@@ -17,13 +17,13 @@ const NewMovie = () => {
     <section className={styles["NewsMovie"]}>
       <div className={styles["gr-box"]}>
         <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>disney</button>
+          <button className={styles["btn-NewsMovie"]}>action</button>
         </div>
         <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>marvel</button>
+          <button className={styles["btn-NewsMovie"]}>horror</button>
         </div>
         <div className={styles["col"]}>
-          <button className={styles["btn-NewsMovie"]}>Pixar</button>
+          <button className={styles["btn-NewsMovie"]}>Cartoon</button>
         </div>
       </div>
       <div className={styles["NewsMovie-Content"]}>

@@ -29,8 +29,6 @@ const Trainler = (props: Props) => {
         </button>
         <div className={styles["video-trainler"]}>
           <iframe
-            width={788}
-            height={443}
             src={`https://www.youtube.com/embed/${URL}`}
             title="Marvel Studios' Captain Marvel - Official Trailer"
             frameBorder={0}
