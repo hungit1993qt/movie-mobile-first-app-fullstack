@@ -69,6 +69,7 @@
             font-size: 1rem;
             opacity: 0.8;
           }
+          
           input,
           textarea {
             font-weight: 500;
@@ -76,10 +77,10 @@
             margin-top: 1rem;
             background-color: #242c3b;
             width: 100%;
-            border: none;
-            border-bottom: solid 1px var(--title);
+            border: none !important;
+            border-bottom: solid 1px var(--title) !important;
             color: var(--title);
-            border-radius: none;
+            border-radius:0% !important;
             &:focus {
               font-size: 1rem;
               border: none;
