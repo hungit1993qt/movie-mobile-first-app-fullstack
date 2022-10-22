@@ -8,6 +8,8 @@ import Recomand from "./Recomand";
 import Trainler from "./Trainler";
 import { Movie } from "Interface/movie";
 import PageLoading from "Components/PageLoading/PageLoading";
+import { Reviews } from "Interface/Reviews";
+import { User } from "Interface/User";
 // import { useNavigate } from "react-router-dom";
 const DetailMovie = () => {
   // const navigate = useNavigate();
@@ -25,6 +27,7 @@ const DetailMovie = () => {
   if (isLoading) {
     return <PageLoading />;
   }
+
   return (
     <div className={styles["detail-movie"]}>
       <Trainler
@@ -75,54 +78,17 @@ const DetailMovie = () => {
         </span>
       </div>
       <div className={styles["list-comment"]}>
-        <div className={styles["comment"]}>
-          <img src="images/p1.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting, the actors are very bloody...
-          </span>
-        </div>
-        <div className={styles["comment"]}>
-          <img src="images/avatar.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting,
-          </span>
-        </div>
-        <div className={styles["comment"]}>
-          <img src="images/p5.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting, the actors ...
-          </span>
-        </div>
-        <div className={styles["comment"]}>
-          <img src="images/p6.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting, the actors are very bloody...
-          </span>
-        </div>
-        <div className={styles["comment"]}>
-          <img src="images/p1.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting, the actors are very bloody...
-          </span>
-        </div>
-        <div className={styles["comment"]}>
-          <img src="images/p3.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting,
-          </span>
-        </div>
-        <div className={styles["comment"]}>
-          <img src="images/p5.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting, the actors ...
-          </span>
-        </div>
-        <div className={styles["comment"]}>
-          <img src="images/p6.jpg" alt="" />
-          <span className={styles["comment-content"]}>
-            This movie is very interesting, the actors are very bloody...
-          </span>
-        </div>
+        {detailMovie?.review.map((reviews: Reviews, index) => {
+          console.log(reviews);
+          return (
+            <div key={index} className={styles["comment"]}>
+              <img src={`${reviews.user.avatar}`} alt="" />
+              <span className={styles["comment-content"]}>
+                {reviews.contentReview}
+              </span>
+            </div>
+          );
+        })}
       </div>
       <Recomand data={movies as Movie[]} />
     </div>
