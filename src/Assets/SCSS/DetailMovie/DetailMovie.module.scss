@@ -81,7 +81,7 @@
     }
     .description {
       font-weight: 300;
-      opacity: 0.6;
+      
       font-size: 0.9rem;
       display: flex;
       justify-content: center;
@@ -94,10 +94,13 @@
         background: #ff512f;
         color: #242c3b;
         font-weight: bold;
+        border-color: #242c3b;
+        // box-shadow: ;
       }
       input {
         width: 78%;
         padding: 10px;
+        opacity: 0.8;
         &:focus {
           font-size: 1rem;
         }
