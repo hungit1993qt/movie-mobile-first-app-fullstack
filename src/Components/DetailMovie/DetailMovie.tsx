@@ -25,8 +25,9 @@ const DetailMovie = () => {
 
     // other logic
   };
-  const onPointerMove = (value: number, index: number) =>
-    console.log(value, index);
+  const onPointerMove = (value: number, index: number) => {
+    // console.log(value, index);
+  };
 
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {

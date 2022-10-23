@@ -1,10 +1,11 @@
+import { Login } from "Interface/Cinema copy";
 import axiosClient from "./axiosClient";
 
 const authAPI = {
-  postUserLogin: ({ taiKhoan, matKhau }: any) => {
-    return axiosClient.post("QuanLyNguoiDung/DangNhap", {
-      taiKhoan,
-      matKhau,
+  postUserLogin: ({ accountUser, passwordUser }: Login) => {
+    return axiosClient.post("user/login/", {
+      accountUser,
+      passwordUser,
     });
   },
   postRegisterUser: (registerValue: any) => {

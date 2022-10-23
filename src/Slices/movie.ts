@@ -21,7 +21,8 @@ const initialState: State = {
 // thunk actions
 export const getAllMovie = createAsyncThunk("movie/getAllMovie", async () => {
   try {
-    const data = await movieAPI.getAllMovie();
+    const response = await movieAPI.getAllMovie();
+    const data = response.data;
     return data;
   } catch (error) {
     throw error;
@@ -32,7 +33,8 @@ export const getAllCinemaBrand = createAsyncThunk(
   "movie/getAllCinemaBrand",
   async () => {
     try {
-      const data = await movieAPI.getAllCinemaBrand();
+      const response = await movieAPI.getAllCinemaBrand();
+      const data = response.data;
       return data;
     } catch (error) {
       throw error;
@@ -44,7 +46,8 @@ export const getMovieDetails = createAsyncThunk(
   "movie/getMovieDetails",
   async (slugMovie: string) => {
     try {
-      const data = await movieAPI.getMovieDetails(slugMovie);
+      const response = await movieAPI.getMovieDetails(slugMovie);
+      const data = response.data;
       return data;
     } catch (error) {
       throw error;
