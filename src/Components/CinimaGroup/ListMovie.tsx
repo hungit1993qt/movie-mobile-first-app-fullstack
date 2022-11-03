@@ -3,6 +3,7 @@ import styles from "Assets/SCSS/CinimaGroup/ListMovie.module.scss";
 import PopupShowTime from "Components/CinimaGroup/ListShowTime";
 import { Cinema } from "Interface/Cinema";
 import { Movie } from "Interface/movie";
+import { Reviews } from "Interface/Reviews";
 type Props = {
   trigger: boolean;
   setTrigger: any;
@@ -12,7 +13,15 @@ type Props = {
 const ListMovie = (props: Props) => {
   const [showPopupTime, setShowPopupTime] = useState(false);
   const { trigger, setTrigger, dataCinema } = props;
-
+  const rank = (array: any) => {
+    let sum = 0;
+    let i = 0;
+    array.forEach(function (value: Reviews) {
+      sum += value.rankReview;
+      i++;
+    });
+    return sum / i;
+  };
   return props.trigger ? (
     <div className={styles["popup-list-movie"]}>
       <PopupShowTime trigger={showPopupTime} setTrigger={setShowPopupTime} />
@@ -34,7 +43,6 @@ const ListMovie = (props: Props) => {
           </div>
           <div className={styles["list-movies"]}>
             {dataCinema.movies.map((listMovie: Movie, index: number) => {
-              console.log(listMovie);
               return (
                 <div
                   onClick={() => setShowPopupTime(true)}
@@ -50,10 +58,11 @@ const ListMovie = (props: Props) => {
                       {listMovie.nameMovie}
                     </span>
                     <span className={styles["movie-description"]}>
-                      {listMovie.slugMovie}
+                      {listMovie.description}
                     </span>
                     <span className={styles["movie-description"]}>
-                      {listMovie.description}
+                      Rank( {rank(listMovie?.review)}*) - {listMovie.timeMovie} {" "}
+                      minute - 
                     </span>
                   </div>
                 </div>

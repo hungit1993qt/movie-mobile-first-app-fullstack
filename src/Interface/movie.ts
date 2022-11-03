@@ -13,4 +13,5 @@ export interface Movie {
   pictureMovie: string;
   thumbnailMovie: string;
   categoryMovie: string;
+  timeMovie: string;
 }
